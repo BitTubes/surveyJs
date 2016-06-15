@@ -1,0 +1,9 @@
+# dev-redirects to production images
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	# jQuey should always be read from the main player directory
+	RewriteRule .*/jquery-([\.0-9]*).min.js$ /survey/jquery-$1.min.js [L,R=301]
+
+	# load all player images from the main player directory 
+	RewriteRule .*/img/(.*)$ /survey/img/$1 [L,R=302]
+</IfModule>

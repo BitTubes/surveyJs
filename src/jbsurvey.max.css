@@ -1,0 +1,132 @@
+html {
+	box-sizing: border-box;
+	-ms-touch-action: none; /* Disable touch behaviors, like pan and zoom */
+}
+*, * ::after, * ::before {
+	box-sizing: inherit;
+}
+html, body {
+	margin:0;
+	padding:0;
+	font-family:Arial, sans-serif;
+	width:100%;
+	height:100%;
+	position:relative;
+	background-color:transparent;
+}
+html {
+	font-size: 16px;
+	padding: 2em; 
+	text-shadow: rgba(0,0,0,0.3) .1em .1em 0.4em;
+}
+
+h1 {
+	color: red;
+	margin: 0 auto 0 auto;
+}
+ol {
+	-webkit-padding-start: 2em;
+	-moz-padding-start: 2em;
+	padding-start: 2em;
+}
+input[type="radio"] {
+	font-size: 100%;
+	width: 0.5em;
+	height: 0.5em;
+	min-width: 13px;
+	min-height: 13px;
+}
+.question {
+	font-size:1.5em;
+	margin: 0 auto 2em auto;
+}
+.answer {
+	font-size:120%;
+}
+.answer > li {
+	margin-bottom: .5em;
+}
+.answer label {
+	padding-left:1em;
+}
+.loadNext, 
+.loadNext * {
+	cursor: wait !important;
+}
+.loadNext .onnext input:checked + .true,
+.immediate input:checked + .true {
+	color: green;
+}
+.loadNext .true {
+	font-weight: bold;
+	color:green;
+}
+.loadNext .onnext input:checked + .false,
+.immediate input:checked + .false {
+	color: red;
+}
+.end,
+.finish,
+.next {
+	display: none;
+	font-size: 150%;
+	font-weight: bold;
+	position: absolute;
+	bottom:0;
+	right:0;
+	cursor: pointer;
+}
+.next::after {
+	content:"";
+	background: url(img/next.png) center center no-repeat;
+	background-size: contain;
+	width:1.4em;
+	height: 1.4em;
+	display: inline-block;
+	margin-left: .5em;
+	vertical-align: bottom;
+}
+
+.next::before,
+.lang-de .next::before {
+	content:"nächste Frage";
+}
+.lang-en .next::before {
+	content:"Next";
+}
+.finish::before,
+.lang-de .finish::before {
+	content:"Fertig";
+}
+.lang-en .finish::before {
+	content:"Finish";
+}
+.end::before,
+.lang-de .end::before {
+	content:"Weiter";
+}
+.lang-en .end::before {
+	content:"Continue";
+}
+
+.result::before,
+.lang-de .result::before {
+	content:"Richtige Antworten: ";
+}
+.lang-en .result::before {
+	content:"Correct answers: ";
+}
+.result-passed::before,
+.lang-de .result-passed::before {
+	content:"Du hast bestanden!";
+}
+.lang-en .result-passed::before {
+	content:"You passed!";
+}
+.result-failed::before,
+.lang-de .result-failed::before {
+	content:"Du hast nicht bestanden.";
+}
+.lang-en .result-failed::before {
+	content:"You failed.";
+}
